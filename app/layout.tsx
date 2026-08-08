@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://livenowapp.net"),
+  metadataBase: new URL("https://www.livenowapp.net"),
 
   title: {
     default: "LiveNow",
@@ -36,6 +36,12 @@ export const metadata: Metadata = {
     "LiveNow helps you understand overthinking, reframe the thought, and take one small step back into the present.",
 
   applicationName: "LiveNow",
+
+  icons: {
+    icon: "/assets/LogoCircle.png",
+    shortcut: "/assets/LogoCircle.png",
+    apple: "/assets/LogoCircle.png",
+  },
 
   keywords: [
     "LiveNow",
@@ -61,30 +67,30 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-  type: "website",
-  locale: "en_US",
-  url: "/",
-  siteName: "LiveNow",
-  title: "LiveNow — Stop Overthinking. Start Living.",
-  description:
-    "Understand the thought, reframe it, and take one small step back into the present.",
-  images: [
-    {
-      url: "/og-image.png",
-      width: 1200,
-      height: 630,
-      alt: "LiveNow",
-    },
-  ],
-},
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "LiveNow",
+    title: "LiveNow — Stop Overthinking. Start Living.",
+    description:
+      "Understand the thought, reframe it, and take one small step back into the present.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "LiveNow",
+      },
+    ],
+  },
 
   twitter: {
-  card: "summary_large_image",
-  title: "LiveNow — Stop Overthinking. Start Living.",
-  description:
-    "Understand the thought, reframe it, and take one small step back into the present.",
-  images: ["/og-image.png"],
-},
+    card: "summary_large_image",
+    title: "LiveNow — Stop Overthinking. Start Living.",
+    description:
+      "Understand the thought, reframe it, and take one small step back into the present.",
+    images: ["/og-image.png"],
+  },
 
   robots: {
     index: true,
