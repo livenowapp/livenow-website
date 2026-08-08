@@ -30,10 +30,12 @@ export default function ScrollStory({
       const section = sectionRef.current;
 
       if (!section) {
+        frame = 0;
         return;
       }
 
       const rect = section.getBoundingClientRect();
+
       const travel = Math.max(
         1,
         section.offsetHeight - window.innerHeight
@@ -72,6 +74,8 @@ export default function ScrollStory({
     };
   }, []);
 
+  const showBottom = progress >= 0.5;
+
   return (
     <section
       ref={sectionRef}
@@ -86,12 +90,12 @@ export default function ScrollStory({
 
           <p>{body}</p>
 
-          <div className="storyProgress">
-            <i
-              style={{
-                width: `${Math.max(4, progress * 100)}%`,
-              }}
-            />
+          <div
+            className={`storyProgress ${
+              showBottom ? "showRight" : "showLeft"
+            }`}
+          >
+            <span />
           </div>
         </div>
 

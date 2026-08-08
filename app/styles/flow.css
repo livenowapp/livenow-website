@@ -1,0 +1,156 @@
+/* =========================================================
+   FLOW SECTION
+   ========================================================= */
+
+.flow {
+  padding: 150px 0 130px;
+}
+
+.flowGrid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 90px;
+}
+
+.flowCopy {
+  position: relative;
+}
+
+.flowCopySticky {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.flowCopyContent {
+  max-width: 660px;
+
+  animation: flowCopySwap 0.35s ease both;
+}
+
+.flowCopyContent .stepEyebrow {
+  margin: 0 0 16px;
+}
+
+.flowCopyContent h3 {
+  max-width: 660px;
+  margin: 0 0 24px;
+
+  font-size: clamp(38px, 4.4vw, 62px);
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+}
+
+.flowCopyContent > p:last-child {
+  max-width: 590px;
+  margin: 0;
+
+  color: #64646a;
+
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.flowTriggers {
+  position: relative;
+  margin-top: -100vh;
+}
+
+.flowTrigger {
+  min-height: 100vh;
+}
+
+.analysisTrigger {
+  min-height: 190vh;
+}
+
+@keyframes flowCopySwap {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stickyDemo {
+  position: sticky;
+  top: 7vh;
+
+  height: 86vh;
+  min-height: 720px;
+
+  display: grid;
+  place-items: center;
+
+  overflow: visible;
+}
+
+.stickyDemo .phone {
+  width: var(--phone-width) !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+.phoneAura {
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 109, 26, 0.08);
+  filter: blur(35px);
+
+  pointer-events: none;
+
+  display: none;
+}
+
+.demoDots {
+  position: absolute;
+  right: 0;
+
+  display: grid;
+  gap: 8px;
+}
+
+.demoDots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #d6d0c9;
+
+  cursor: pointer;
+
+  transition:
+    height 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.2s ease;
+}
+
+.demoDots button:hover {
+  transform: scale(1.25);
+}
+
+.demoDots button.active {
+  height: 27px;
+
+  background: var(--orange);
+}
+
+.demoDots button:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 4px;
+}

@@ -1,0 +1,258 @@
+/* =========================================================
+   FIXED NAVIGATION
+   ========================================================= */
+
+.navBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: rgba(248, 245, 239, 0.92);
+  border-bottom: 1px solid rgba(20, 20, 20, 0.06);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.nav {
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--text);
+
+  font-size: 20px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.brandLogo {
+  display: block;
+
+  width: 38px;
+  height: 38px;
+
+  object-fit: contain;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navLinks a {
+  color: var(--text);
+
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.navCta {
+  padding: 13px 21px;
+
+  border-radius: 999px;
+
+  background: #111111;
+  color: #ffffff !important;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  height: calc(100svh - 76px - 96px);
+  min-height: 620px;
+
+  margin-top: 76px;
+  padding-block: 0 18px;
+
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(320px, 0.72fr);
+  align-items: center;
+  column-gap: clamp(52px, 7vw, 110px);
+
+  overflow: visible;
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 2;
+
+  max-width: 610px;
+}
+
+.heroCopy .eyebrow {
+  margin-bottom: 18px;
+}
+
+.heroCopy h1 {
+  margin: 0;
+
+  font-size: clamp(54px, 4.65vw, 76px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.heroCopy h1 span {
+  color: var(--orange);
+}
+
+.heroText {
+  max-width: 570px;
+
+  margin-top: 20px;
+
+  color: #57575d;
+
+  font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.55;
+}
+
+.heroActions {
+  margin-top: 22px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   HERO PHONE
+   ========================================================= */
+
+.heroVisual {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: visible;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: -1;
+
+  background:
+    radial-gradient(
+      circle at 72% 52%,
+      rgba(255,108,26,.13) 0%,
+      rgba(255,108,26,.07) 26%,
+      rgba(255,108,26,.03) 42%,
+      transparent 65%
+    );
+}
+
+.heroVisual .phone {
+  position: relative;
+  z-index: 1;
+
+  width: var(--phone-width);
+  height: auto;
+
+  flex: 0 0 auto;
+}
+
+/*
+  Screenshot already contains the Dynamic Island.
+*/
+
+.heroScreenshot {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  border-radius: 43px;
+
+  background: #f8f6f1;
+
+  clip-path: inset(0 round 43px);
+  -webkit-clip-path: inset(0 round 43px);
+
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+.heroScreenshot img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border-radius: 43px;
+
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* =========================================================
+   ORANGE BAND
+   ========================================================= */
+
+.orangeBand {
+  position: relative;
+  z-index: 2;
+
+  min-height: 96px;
+
+  background: var(--orange);
+  color: #ffffff;
+}
+
+.bandGrid {
+  min-height: 96px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+
+  text-align: center;
+
+  font-size: clamp(18px, 2vw, 25px);
+}
+
+.bandGrid strong + strong {
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+}

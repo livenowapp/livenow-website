@@ -1,0 +1,45 @@
+/* =========================================================
+   ACTION CLOUD
+   ========================================================= */
+
+.actionsSection {
+  padding: 120px 0 150px;
+
+  background: #ffffff;
+}
+
+.actionCloud {
+  margin-top: 65px;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+.actionCloud > div {
+  aspect-ratio: 1;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 26px;
+
+  background: var(--bg);
+
+  animation: float 5s ease-in-out infinite;
+}
+
+.actionCloud > div:nth-child(even) {
+  transform: translateY(18px);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -12px;
+  }
+}

@@ -1,0 +1,174 @@
+/* =========================================================
+   MOMENT DETAIL SCROLL STORY
+   ========================================================= */
+
+.scrollStory {
+  position: relative;
+
+  height: 260vh;
+
+  background: var(--bg);
+}
+
+.scrollStory.dark {
+  background: #111111;
+  color: #ffffff;
+}
+
+.scrollStorySticky {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 90px;
+
+  overflow: hidden;
+}
+
+.scrollStoryCopy {
+  max-width: 660px;
+}
+
+.scrollStoryCopy h2 {
+  max-width: 660px;
+  margin: 14px 0 30px;
+
+  font-size: clamp(54px, 5.4vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+
+.scrollStoryCopy > p:not(.eyebrow) {
+  max-width: 590px;
+  margin: 0;
+
+  color: #66666d;
+
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.scrollStory.dark .scrollStoryCopy > p:not(.eyebrow) {
+  color: #b5b5ba;
+}
+
+.storyProgress {
+  position: relative;
+
+  width: 100%;
+  max-width: 440px;
+  height: 4px;
+  margin-top: 34px;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.storyProgress span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  width: 50%;
+
+  border-radius: 999px;
+
+  background: var(--orange);
+}
+
+.storyProgress.showLeft span {
+  left: 0;
+  right: auto;
+}
+
+.storyProgress.showRight span {
+  left: auto;
+  right: 0;
+}
+
+.scrollStoryPhone {
+  position: relative;
+
+  height: 86vh;
+  min-height: 0;
+
+  display: grid;
+  place-items: center;
+}
+
+.scrollStoryPhone::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 109, 26, 0.13);
+  filter: blur(28px);
+
+  pointer-events: none;
+}
+
+.scrollStoryPhone .phone {
+  position: relative;
+  z-index: 1;
+
+  width: var(--phone-width);
+  height: auto;
+  max-height: none;
+}
+
+/* =========================================================
+   MOMENTS + INSIGHTS
+   ========================================================= */
+
+.progressSection {
+  padding: 150px 0;
+}
+
+.progressGrid {
+  display: grid;
+  grid-template-columns: var(--phone-width) 1fr var(--phone-width);
+  align-items: center;
+  gap: 55px;
+}
+
+.progressCopy {
+  text-align: center;
+}
+
+.progressCopy > p {
+  color: #67676d;
+
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.screenshotPhone {
+  position: relative;
+
+  width: var(--phone-width);
+  aspect-ratio: 393 / 852;
+
+  overflow: hidden;
+
+  border-radius: 46px;
+
+  background: #f8f6f1;
+
+  box-shadow: 0 30px 70px rgba(40, 30, 20, 0.15);
+}
+
+.screenshotPhone img {
+  object-fit: cover;
+}

@@ -1,8 +1,6 @@
-import InputScreen from "@/screens/InputScreen";
 import AnalyzeScreen from "@/screens/AnalyzeScreen";
-import ReframeScreen from "@/screens/ReframeScreen";
-import ActionScreen from "@/screens/ActionScreen";
-import CompleteScreen from "@/screens/CompleteScreen";
+
+import ScreenshotScreen from "@/components/ScreenshotScreen";
 
 export type Stage =
   | "input"
@@ -22,18 +20,38 @@ export default function StageScreen({
 }: StageScreenProps) {
   switch (stage) {
     case "input":
-      return <InputScreen />;
+      return (
+        <ScreenshotScreen
+          src="/screens/reset-input.png"
+          alt="LiveNow input screen"
+        />
+      );
 
     case "analyze":
       return <AnalyzeScreen progress={analysisProgress} />;
 
     case "reframe":
-      return <ReframeScreen />;
+      return (
+        <ScreenshotScreen
+          src="/screens/reset-reframe.png"
+          alt="LiveNow reframe screen"
+        />
+      );
 
     case "action":
-      return <ActionScreen />;
+      return (
+        <ScreenshotScreen
+          src="/screens/reset-action.png"
+          alt="LiveNow action screen"
+        />
+      );
 
     case "complete":
-      return <CompleteScreen />;
+      return (
+        <ScreenshotScreen
+          src="/screens/reset-complete.png"
+          alt="LiveNow complete screen"
+        />
+      );
   }
 }

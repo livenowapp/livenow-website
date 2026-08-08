@@ -1,0 +1,142 @@
+/* =========================================================
+   LEGAL PAGES
+   ========================================================= */
+
+.legalPage {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.legalNav {
+  border-bottom: 1px solid var(--line);
+  background: rgba(248, 245, 239, 0.94);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.legalNavInner {
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.legalBackLink {
+  color: #5f5f65;
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.legalContent {
+  width: min(820px, calc(100% - 48px));
+  margin-inline: auto;
+
+  padding: 110px 0 130px;
+}
+
+.legalHero {
+  margin-bottom: 76px;
+}
+
+.legalHero .eyebrow {
+  margin: 0 0 18px;
+}
+
+.legalHero h1 {
+  margin: 0;
+
+  font-size: clamp(52px, 7vw, 88px);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+}
+
+.legalDate {
+  margin: 24px 0 0;
+
+  color: var(--muted);
+
+  font-size: 16px;
+}
+
+.legalContent section {
+  margin-top: 58px;
+}
+
+.legalContent h2 {
+  margin: 0 0 22px;
+
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.legalContent h3 {
+  margin: 28px 0 12px;
+
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.legalContent p,
+.legalContent li {
+  color: #56565d;
+
+  font-size: 18px;
+  line-height: 1.75;
+}
+
+.legalContent p {
+  margin: 0 0 18px;
+}
+
+.legalContent ul {
+  margin: 16px 0 24px;
+  padding-left: 24px;
+}
+
+.legalContent li + li {
+  margin-top: 8px;
+}
+
+.legalContent a {
+  color: var(--orange);
+  font-weight: 650;
+}
+
+.legalLastUpdated {
+  margin-top: 80px !important;
+  padding-top: 30px;
+
+  border-top: 1px solid var(--line);
+
+  color: var(--muted) !important;
+  font-size: 15px !important;
+}
+
+@media (max-width: 600px) {
+  .legalNavInner {
+    min-height: 68px;
+  }
+
+  .legalContent {
+    width: min(100% - 28px, 820px);
+    padding: 80px 0 100px;
+  }
+
+  .legalHero {
+    margin-bottom: 58px;
+  }
+
+  .legalContent section {
+    margin-top: 46px;
+  }
+
+  .legalContent p,
+  .legalContent li {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+}

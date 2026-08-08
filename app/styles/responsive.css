@@ -1,0 +1,731 @@
+/* =========================================================
+   RESPONSIVE — TABLET LANDSCAPE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(280px, 0.72fr);
+
+    column-gap: 36px;
+  }
+
+  .heroCopy h1 {
+    font-size: clamp(52px, 6vw, 70px);
+  }
+
+  .heroVisual .phone {
+    width: var(--phone-width) !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 950px) {
+  :root {
+    --phone-width: min(320px, 82vw);
+  }
+
+  .hero,
+  .flowGrid,
+  .scrollStorySticky,
+  .progressGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* HERO */
+
+  .hero {
+    height: auto;
+    min-height: 0;
+
+    padding: 70px 0;
+
+    gap: 48px;
+
+    text-align: center;
+  }
+
+  .heroCopy {
+    max-width: 660px;
+
+    margin-inline: auto;
+  }
+
+  .heroText {
+    margin-inline: auto;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .heroVisual {
+    height: 680px;
+    min-height: 680px;
+  }
+
+  /* FLOW */
+
+  .flowGrid {
+    position: relative;
+
+    display: grid;
+  }
+
+  .flowCopy,
+  .stickyDemo {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .flowCopy {
+    position: relative;
+    z-index: 1;
+  }
+
+  .flowCopySticky {
+    position: sticky;
+    top: 68px;
+
+    height: calc(100svh - 68px);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    padding-top: 32px;
+
+    text-align: center;
+
+    pointer-events: none;
+  }
+
+  .flowCopyContent {
+    max-width: min(560px, calc(100% - 30px));
+  }
+
+  .flowTriggers {
+    position: relative;
+
+    margin-top: -100vh;
+  }
+
+  .stickyDemo {
+    position: sticky;
+    top: 68px;
+    z-index: 2;
+
+    height: calc(100svh - 68px);
+    min-height: 620px;
+
+    display: grid;
+    place-items: center;
+
+    pointer-events: none;
+  }
+
+  .demoDots {
+    pointer-events: auto;
+  }
+
+  /* MOMENT STORY */
+
+  .scrollStory {
+    height: auto;
+
+    padding: 100px 0;
+  }
+
+  .scrollStorySticky {
+    position: relative;
+
+    height: auto;
+    gap: 55px;
+
+    text-align: center;
+  }
+
+  .scrollStoryCopy {
+    margin-inline: auto;
+  }
+
+  .scrollStoryCopy > p:not(.eyebrow),
+  .storyProgress {
+    margin-inline: auto;
+  }
+
+  .scrollStoryPhone {
+    min-height: 720px;
+  }
+
+  /* MOMENTS + INSIGHTS */
+
+  .progressCopy {
+    order: -1;
+  }
+
+  .screenshotPhone {
+    margin-inline: auto;
+  }
+
+  /* ACTIONS */
+
+  .actionCloud {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* FOOTER */
+
+  .footer {
+    grid-template-columns: 1fr;
+
+    padding: 38px 0;
+
+    text-align: center;
+  }
+
+  .footer .brand,
+  .footerLinks {
+    justify-content: center;
+  }
+
+  .footer > p {
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE LANDSCAPE / LARGE PHONE
+   ========================================================= */
+
+@media (max-width: 820px) {
+  .nav {
+    height: 68px;
+    min-height: 68px;
+  }
+
+  .hero {
+    height: auto;
+    min-height: 0;
+
+    margin-top: 68px;
+    padding: 58px 0 70px;
+
+    grid-template-columns: 1fr;
+    gap: 44px;
+
+    text-align: center;
+  }
+
+  .heroCopy {
+    max-width: 650px;
+
+    margin-inline: auto;
+  }
+
+  .heroCopy h1 {
+    font-size: clamp(48px, 12vw, 68px);
+  }
+
+  .heroText {
+    margin-inline: auto;
+  }
+
+  .heroActions {
+    justify-content: center;
+  }
+
+  .heroVisual {
+    height: 680px;
+    min-height: 680px;
+  }
+
+  .heroVisual .phone {
+    width: min(330px, 86vw) !important;
+    height: auto !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — PHONE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  :root {
+    --phone-width: min(270px, 74vw);
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  /* GLOBAL */
+
+  .shell {
+    width: min(100% - 28px, 1240px);
+  }
+
+  /* NAVIGATION */
+
+  .nav {
+    height: 64px;
+    min-height: 64px;
+  }
+
+  .navBar .nav {
+    padding-inline: 0;
+  }
+
+  .brand {
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .brandLogo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand span {
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .navLinks {
+    flex: 0 0 auto;
+    gap: 0;
+  }
+
+  .navLinks > a:not(.navCta) {
+    display: none;
+  }
+
+  .navCta {
+    padding: 11px 15px;
+
+    font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  /* HERO */
+
+  .hero {
+    height: auto;
+    min-height: 0;
+
+    margin-top: 64px;
+    padding: 38px 0 54px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    text-align: center;
+
+    overflow: hidden;
+  }
+
+  .heroCopy {
+    width: 100%;
+    max-width: 390px;
+
+    margin-inline: auto;
+  }
+
+  .heroCopy .eyebrow {
+    margin: 0 0 12px;
+
+    font-size: 10px;
+    line-height: 1.35;
+    letter-spacing: 0.13em;
+  }
+
+  .heroCopy h1 {
+  margin: 0;
+
+  font-size: clamp(31px, 8.8vw, 37px);
+  line-height: 0.91;
+  letter-spacing: -0.055em;
+}
+
+  .heroText {
+    max-width: 350px;
+
+    margin: 18px auto 0;
+
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .heroActions {
+    margin-top: 18px;
+
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .heroActions .primaryButton {
+    min-height: 48px;
+
+    padding-inline: 24px;
+
+    border-radius: 15px;
+
+    font-size: 15px;
+  }
+
+  .heroActions > span {
+    font-size: 12px;
+  }
+
+  /* HERO PHONE */
+
+.heroVisual {
+  width: 100%;
+  height: 590px;
+  min-height: 590px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding-top: 0;
+}
+
+.heroVisual .phone {
+  width: min(285px, 76vw) !important;
+  height: auto !important;
+
+  flex: 0 0 auto;
+}
+
+  .heroScreenshot,
+  .heroScreenshot img {
+    border-radius: 38px;
+  }
+
+  .heroScreenshot {
+    clip-path: inset(0 round 38px);
+    -webkit-clip-path: inset(0 round 38px);
+  }
+
+  /* PHONE FRAME */
+
+  .phone {
+    border-radius: 50px;
+  }
+
+  .screen {
+    border-radius: 42px;
+  }
+
+  /* ORANGE BAND */
+
+  .orangeBand {
+    display: block;
+  }
+
+  .bandGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+
+    padding: 25px 0;
+  }
+
+  .bandGrid strong {
+    font-size: 16px;
+  }
+
+  .bandGrid strong + strong {
+    border-left: 0;
+  }
+
+  /* MAIN SECTIONS */
+
+  .flow,
+  .progressSection {
+    padding: 100px 0;
+  }
+
+  .stickyDemo,
+  .scrollStoryPhone {
+    min-height: 650px;
+  }
+
+  /* MOMENT STORY */
+
+  .scrollStoryCopy h2 {
+    font-size: 50px;
+  }
+
+  /* ACTIONS */
+
+  .actionCloud {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .actionCloud > div {
+    border-radius: 20px;
+  }
+
+  .actionCloud img {
+    width: 62px;
+    height: 62px;
+  }
+
+  /* FINAL CTA */
+
+  .finalCta {
+    min-height: auto;
+
+    padding: 90px 20px 70px;
+  }
+
+  .finalCtaLogo {
+    width: 78px;
+    height: 78px;
+  }
+
+  .finalCta h2 {
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .ctaOrb {
+    width: min(500px, 110vw);
+  }
+
+  /* FOOTER */
+
+  .footerLinks {
+    flex-wrap: wrap;
+  }
+
+  /* RESET DOTS */
+
+  .demoDots {
+    right: -3px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .flowCopyContent,
+  .actionCloud > div {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   FINAL MOBILE HERO
+   Originalni telefon je samo sorazmerno pomanjšan
+   Desktop ostane nespremenjen
+   ========================================================= */
+
+@media (max-width: 600px) {
+  :root {
+    --mobile-nav-height: 64px;
+    --mobile-band-height: 66px;
+  }
+
+  /* HERO */
+
+  .hero {
+    width: 100%;
+
+    height: calc(
+      100svh
+      - var(--mobile-nav-height)
+      - var(--mobile-band-height)
+    );
+    min-height: 560px;
+
+    margin-top: var(--mobile-nav-height);
+    padding: 14px 0 4px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+
+    overflow: hidden;
+
+    text-align: center;
+  }
+
+  /* HERO TEXT */
+
+  .heroCopy {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 350px;
+
+    margin-inline: auto;
+
+    flex: 0 0 auto;
+  }
+
+  .heroCopy .eyebrow {
+    margin: 0 0 7px;
+
+    font-size: 8px;
+    line-height: 1.2;
+    letter-spacing: 0.14em;
+  }
+
+  .heroCopy h1 {
+    margin: 0;
+
+    font-size: clamp(31px, 8.8vw, 37px);
+    line-height: 1.04;
+    letter-spacing: -0.055em;
+  }
+
+  .heroText {
+    max-width: 320px;
+
+    margin: 10px auto 0;
+
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+
+  /* BUTTON */
+
+  .heroActions {
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+  }
+
+  .heroActions .primaryButton {
+    min-height: 38px;
+
+    padding: 9px 17px;
+
+    border-radius: 12px;
+
+    font-size: 12.5px;
+  }
+
+  .heroActions > span {
+    display: block;
+
+    font-size: 9.5px;
+    line-height: 1.2;
+  }
+
+  /* =========================================================
+     ORIGINAL PHONE — SCALED AS ONE COMPLETE OBJECT
+     ========================================================= */
+
+  .heroVisual {
+    position: relative;
+
+    width: 100%;
+    height: 288px;
+    min-height: 288px;
+
+    flex: 0 0 288px;
+
+    display: block;
+
+    padding: 0;
+
+    overflow: hidden;
+  }
+
+  .heroAura {
+    top: 43%;
+    left: 50%;
+
+    width: 210px;
+    height: 210px;
+
+    transform: translate(-50%, -50%);
+  }
+
+  /*
+    Telefon obdrži svojo originalno širino in obliko.
+    Scale sorazmerno zmanjša čisto vse njegove dele.
+  */
+
+  .heroVisual .phone {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    width: 285px !important;
+    height: auto !important;
+
+    margin: 0;
+
+    transform:
+      translateX(-50%)
+      scale(0.46) !important;
+
+    transform-origin: top center;
+
+    flex: none;
+  }
+
+  /* Ne spreminjamo radiusov telefona ali screenshota. */
+
+  /* =========================================================
+     ORANGE BAND
+     ========================================================= */
+
+  .orangeBand {
+    display: block;
+
+    height: var(--mobile-band-height);
+    min-height: var(--mobile-band-height);
+  }
+
+  .bandGrid {
+    width: min(100% - 16px, 1240px);
+    height: var(--mobile-band-height);
+    min-height: var(--mobile-band-height);
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+
+    padding: 0;
+  }
+
+  .bandGrid strong {
+    padding-inline: 4px;
+
+    font-size: clamp(9px, 2.6vw, 11px);
+    line-height: 1.15;
+
+    white-space: nowrap;
+  }
+
+  .bandGrid strong + strong {
+    border-left: 1px solid rgba(255, 255, 255, 0.38);
+  }
+}
