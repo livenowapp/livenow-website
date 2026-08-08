@@ -1,30 +1,35 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import styles from "../launch.module.css";
+
 export default function PrivacyPage() {
   return (
     <main className="legalPage">
-      <header className="legalNav">
-        <div className="shell legalNavInner">
-          <Link
+      <header className={styles.header}>
+        <div className={styles.headerInner}>
+            <Link
             href="/"
-            className="brand"
-            aria-label="Back to LiveNow home"
-          >
+            className={styles.brand}
+            aria-label="LiveNow home"
+            >
             <Image
-              src="/assets/LogoCircle.png"
-              alt=""
-              width={38}
-              height={38}
-              priority
+                src="/assets/LogoCircle.png"
+                alt=""
+                width={38}
+                height={38}
+                priority
             />
 
             <span>LiveNow</span>
-          </Link>
+            </Link>
 
-          <Link href="/" className="legalBackLink">
+            <Link
+            href="/"
+            className={styles.headerBadge}
+            >
             Back to home
-          </Link>
+            </Link>
         </div>
       </header>
 
