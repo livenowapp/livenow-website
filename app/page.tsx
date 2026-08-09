@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./launch.module.css";
+import WaitlistForm from "@/components/WaitlistForm";
 
 export default function Home() {
   return (
@@ -59,9 +60,7 @@ export default function Home() {
             Take one small step back to the present.
           </p>
 
-          <div className={styles.comingSoon}>
-            Coming soon on the App Store
-          </div>
+          <WaitlistForm />
 
           <p className={styles.tagline}>
             A guided reset for the moments when your mind

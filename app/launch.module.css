@@ -204,6 +204,157 @@
   font-weight: 700;
 }
 
+.waitlist {
+  width: min(560px, 100%);
+  margin-top: 32px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.waitlistTitle {
+  margin: 0 0 12px;
+
+  color: #69696f;
+
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.waitlistForm {
+  width: 100%;
+
+  display: flex;
+  gap: 10px;
+}
+
+.waitlistInput {
+  min-width: 0;
+  flex: 1;
+
+  height: 54px;
+  padding: 0 17px;
+
+  border: 1px solid rgba(20, 20, 20, 0.1);
+  border-radius: 15px;
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.8);
+  color: #111111;
+
+  font: inherit;
+  font-size: 15px;
+
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.waitlistInput::placeholder {
+  color: #9a9aa1;
+}
+
+.waitlistInput:focus {
+  border-color: rgba(255, 109, 26, 0.55);
+
+  box-shadow:
+    0 0 0 4px rgba(255, 109, 26, 0.08);
+}
+
+.waitlistButton {
+  height: 54px;
+  padding: 0 22px;
+
+  border: 0;
+  border-radius: 15px;
+
+  background: #ff6d1a;
+  color: #ffffff;
+
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  box-shadow:
+    0 14px 28px rgba(255, 109, 26, 0.14);
+
+  transition:
+    transform 150ms ease,
+    opacity 150ms ease;
+}
+
+.waitlistButton:hover {
+  transform: translateY(-1px);
+}
+
+.waitlistButton:disabled {
+  cursor: default;
+  opacity: 0.65;
+  transform: none;
+}
+
+.waitlistPrivacy {
+  margin: 10px 0 0;
+
+  color: #9a9aa1;
+
+  font-size: 12px;
+}
+
+.waitlistError {
+  margin: 10px 0 0;
+
+  color: #b42318;
+
+  font-size: 13px;
+}
+
+.waitlistSuccess {
+  width: min(480px, 100%);
+  margin-top: 32px;
+
+  padding: 17px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  border: 1px solid rgba(255, 109, 26, 0.13);
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  text-align: left;
+}
+
+.waitlistSuccess strong {
+  display: block;
+
+  font-size: 15px;
+}
+
+.waitlistSuccess p {
+  margin: 3px 0 0;
+
+  color: #73737a;
+
+  font-size: 13px;
+}
+
+.waitlistCheck {
+  color: #ff6d1a;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
 .tagline {
   max-width: 520px;
 
@@ -356,6 +507,34 @@ FOOTER
 
     font-size: 14px;
   }
+
+  .waitlist {
+  margin-top: 26px;
+}
+
+.waitlistTitle {
+  max-width: 300px;
+  font-size: 13px;
+}
+
+.waitlistForm {
+  flex-direction: column;
+  gap: 9px;
+}
+
+.waitlistInput,
+.waitlistButton {
+  width: 100%;
+  height: 52px;
+}
+
+.waitlistPrivacy {
+  font-size: 11px;
+}
+
+.waitlistSuccess {
+  margin-top: 26px;
+}
 
   .tagline {
     max-width: 330px;
