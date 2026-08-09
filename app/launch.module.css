@@ -429,7 +429,7 @@ FOOTER
 
 @media (max-width: 700px) {
   .headerInner {
-    width: min(100% - 28px, 1400px);
+    width: min(100% - 40px, 1400px);
     height: 68px;
   }
 
@@ -461,7 +461,7 @@ FOOTER
   .hero {
     min-height: auto;
 
-    padding: 48px 18px 58px;
+    padding: 48px 20px 58px;
   }
 
   .heroGlow {
@@ -509,45 +509,51 @@ FOOTER
   }
 
 .waitlist {
-  width: min(100%, 360px);
+  width: min(100%, 680px);
   margin-top: 30px;
 }
 
 .waitlistTitle {
-  max-width: 320px;
+  max-width: 100%;
   margin: 0 0 14px;
 
   font-size: 13px;
   line-height: 1.45;
+  text-align: center;
 }
 
 .waitlistForm {
   width: 100%;
 
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
   gap: 10px;
 }
 
 .waitlistInput {
-  width: 100%;
-  height: 48px;
-
-  padding: 0 16px;
-
-  border-radius: 14px;
-
-  font-size: 15px;
-}
-
-.waitlistButton {
-  width: 100%;
-  height: 50px;
+  flex: 1;
+  min-width: 0;
+  height: 56px;
 
   padding: 0 18px;
 
   border-radius: 14px;
 
+  font-size: 16px;
+}
+
+.waitlistButton {
+  width: auto;
+  min-width: 150px;
+  height: 56px;
+
+  padding: 0 20px;
+
+  border-radius: 14px;
+
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .waitlistPrivacy {
@@ -555,15 +561,31 @@ FOOTER
 
   font-size: 11px;
   line-height: 1.4;
+  text-align: center;
 }
 
 .waitlistSuccess {
-  width: min(100%, 360px);
+  width: min(100%, 680px);
 
   margin-top: 30px;
   padding: 15px 17px;
 
   border-radius: 15px;
+}
+
+@media (max-width: 380px) {
+  .waitlistForm {
+    flex-direction: column;
+  }
+
+  .waitlistInput,
+  .waitlistButton {
+    width: 100%;
+  }
+
+  .waitlistButton {
+    min-width: 0;
+  }
 }
 
   .tagline {
@@ -575,7 +597,7 @@ FOOTER
   }
 
   .footer {
-  padding: 0 18px 26px;
+  padding: 0 20px 26px;
 }
 
 .footerInner {
