@@ -120,10 +120,6 @@ export default function WaitlistForm() {
           {message}
         </p>
       )}
-
-      <p className={styles.waitlistPrivacy}>
-        No spam. Just the LiveNow launch update.
-      </p>
     </div>
   );
 }
