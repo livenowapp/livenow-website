@@ -508,32 +508,62 @@ FOOTER
     font-size: 14px;
   }
 
-  .waitlist {
-  margin-top: 26px;
+.waitlist {
+  width: min(100%, 360px);
+  margin-top: 30px;
 }
 
 .waitlistTitle {
-  max-width: 300px;
+  max-width: 320px;
+  margin: 0 0 14px;
+
   font-size: 13px;
+  line-height: 1.45;
 }
 
 .waitlistForm {
+  width: 100%;
+
   flex-direction: column;
-  gap: 9px;
+  gap: 10px;
 }
 
-.waitlistInput,
+.waitlistInput {
+  width: 100%;
+  height: 48px;
+
+  padding: 0 16px;
+
+  border-radius: 14px;
+
+  font-size: 15px;
+}
+
 .waitlistButton {
   width: 100%;
-  height: 52px;
+  height: 50px;
+
+  padding: 0 18px;
+
+  border-radius: 14px;
+
+  font-size: 14px;
 }
 
 .waitlistPrivacy {
+  margin-top: 10px;
+
   font-size: 11px;
+  line-height: 1.4;
 }
 
 .waitlistSuccess {
-  margin-top: 26px;
+  width: min(100%, 360px);
+
+  margin-top: 30px;
+  padding: 15px 17px;
+
+  border-radius: 15px;
 }
 
   .tagline {
