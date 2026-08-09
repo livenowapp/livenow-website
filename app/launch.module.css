@@ -509,13 +509,16 @@ FOOTER
   }
 
 .waitlist {
-  width: min(100%, 680px);
+  width: 100%;
+  max-width: 360px;
   margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .waitlistTitle {
-  max-width: 100%;
-  margin: 0 0 14px;
+  max-width: 320px;
+  margin: 0 auto 14px;
 
   font-size: 13px;
   line-height: 1.45;
@@ -524,35 +527,33 @@ FOOTER
 
 .waitlistForm {
   width: 100%;
-
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  gap: 10px;
+  gap: 8px;
 }
 
 .waitlistInput {
   flex: 1;
   min-width: 0;
-  height: 56px;
+  height: 50px;
 
-  padding: 0 18px;
+  padding: 0 14px;
 
   border-radius: 14px;
 
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .waitlistButton {
-  width: auto;
-  min-width: 150px;
-  height: 56px;
+  flex: 0 0 auto;
+  height: 50px;
 
-  padding: 0 20px;
+  padding: 0 15px;
 
   border-radius: 14px;
 
-  font-size: 14px;
+  font-size: 13px;
   white-space: nowrap;
 }
 
@@ -565,27 +566,13 @@ FOOTER
 }
 
 .waitlistSuccess {
-  width: min(100%, 680px);
+  width: 100%;
+  max-width: 360px;
 
-  margin-top: 30px;
+  margin: 30px auto 0;
   padding: 15px 17px;
 
   border-radius: 15px;
-}
-
-@media (max-width: 380px) {
-  .waitlistForm {
-    flex-direction: column;
-  }
-
-  .waitlistInput,
-  .waitlistButton {
-    width: 100%;
-  }
-
-  .waitlistButton {
-    min-width: 0;
-  }
 }
 
   .tagline {
