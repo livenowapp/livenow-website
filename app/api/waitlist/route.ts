@@ -1,10 +1,14 @@
 import { NextResponse } from "next/server";
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const RESEND_WAITLIST_SEGMENT_ID =
+  process.env.RESEND_WAITLIST_SEGMENT_ID;
 
 export async function POST(request: Request) {
   try {
-    if (!RESEND_API_KEY) {
+    if (!RESEND_API_KEY || !RESEND_WAITLIST_SEGMENT_ID) {
+      console.error("Missing Resend environment variables.");
+
       return NextResponse.json(
         { error: "Server configuration error." },
         { status: 500 }
@@ -12,6 +16,7 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
+
     const email = String(body?.email ?? "")
       .trim()
       .toLowerCase();
@@ -33,7 +38,10 @@ export async function POST(request: Request) {
       );
     }
 
-    // Save to Resend Contacts
+    // -----------------------------------------
+    // 1. SAVE CONTACT TO RESEND
+    // -----------------------------------------
+
     const contactResponse = await fetch(
       "https://api.resend.com/contacts",
       {
@@ -53,7 +61,6 @@ export async function POST(request: Request) {
       const contactError =
         await contactResponse.json().catch(() => null);
 
-      // Treat an already-existing contact as success
       const alreadyExists =
         contactResponse.status === 409 ||
         String(contactError?.message ?? "")
@@ -76,7 +83,54 @@ export async function POST(request: Request) {
       }
     }
 
-    // Send confirmation email
+    // -----------------------------------------
+    // 2. ADD CONTACT TO LIVEnow WAITLIST SEGMENT
+    // -----------------------------------------
+
+    const segmentResponse = await fetch(
+      `https://api.resend.com/segments/${RESEND_WAITLIST_SEGMENT_ID}/contacts`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${RESEND_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+        }),
+      }
+    );
+
+    if (!segmentResponse.ok) {
+      const segmentError =
+        await segmentResponse.json().catch(() => null);
+
+      const alreadyInSegment =
+        segmentResponse.status === 409 ||
+        String(segmentError?.message ?? "")
+          .toLowerCase()
+          .includes("already");
+
+      if (!alreadyInSegment) {
+        console.error("Resend segment error:", {
+          status: segmentResponse.status,
+          body: segmentError,
+        });
+
+        return NextResponse.json(
+          {
+            error:
+              "We couldn't add you to the waitlist. Please try again.",
+          },
+          { status: 500 }
+        );
+      }
+    }
+
+    // -----------------------------------------
+    // 3. SEND CONFIRMATION EMAIL
+    // -----------------------------------------
+
     const emailResponse = await fetch(
       "https://api.resend.com/emails",
       {
@@ -90,15 +144,22 @@ export async function POST(request: Request) {
           to: [email],
           subject: "You're on the LiveNow waitlist",
           html: `
-            <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111111;">
-              <h2 style="margin-bottom: 16px;">You're on the list.</h2>
+            <div style="
+              font-family: Arial, sans-serif;
+              line-height: 1.6;
+              color: #111111;
+            ">
+              <h2 style="margin-bottom: 16px;">
+                You're on the list.
+              </h2>
 
               <p>
                 Thanks for joining the LiveNow waitlist.
               </p>
 
               <p>
-                We'll let you know when LiveNow is available on the App Store.
+                We'll let you know when LiveNow is available
+                on the App Store.
               </p>
 
               <p style="margin-top: 28px;">
@@ -123,9 +184,13 @@ export async function POST(request: Request) {
         body: emailError,
       });
 
-      // The user is already saved to the waitlist,
-      // so don't fail the whole request if confirmation email fails.
+      // Contact is already safely stored on the waitlist,
+      // so confirmation email failure does not fail signup.
     }
+
+    // -----------------------------------------
+    // SUCCESS
+    // -----------------------------------------
 
     return NextResponse.json(
       {
