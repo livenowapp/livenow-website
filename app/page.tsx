@@ -45,7 +45,7 @@ export default function Home() {
           />
 
           <p className={styles.eyebrow}>
-            LiveNow for iPhone
+            A reset for your mind
           </p>
 
           <h1 className={styles.title}>
