@@ -116,6 +116,10 @@ export default function AuthActionClient() {
     }
   }
 
+  function handleBackToApp() {
+    window.location.href = "livenow://";
+  }
+
   return (
     <main
       style={{
@@ -125,6 +129,7 @@ export default function AuthActionClient() {
         padding: "24px",
         background: "#f8f5ef",
         color: "#111111",
+        boxSizing: "border-box",
       }}
     >
       <div
@@ -134,26 +139,71 @@ export default function AuthActionClient() {
           padding: "32px",
           borderRadius: "24px",
           background: "#ffffff",
+          boxSizing: "border-box",
         }}
       >
-        <h1
+        {/* LiveNow logo + name */}
+        <div
           style={{
-            margin: "0 0 16px",
-            fontSize: "28px",
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            marginBottom: "22px",
           }}
         >
-          LiveNow
-        </h1>
+          <img
+            src="/icon.png"
+            alt="LiveNow"
+            style={{
+              width: "38px",
+              height: "38px",
+              objectFit: "contain",
+            }}
+          />
+
+          <h1
+            style={{
+              margin: 0,
+              fontSize: "28px",
+              fontWeight: 700,
+            }}
+          >
+            LiveNow
+          </h1>
+        </div>
 
         {status === "loading" && (
-          <p>Checking your link...</p>
+          <p
+            style={{
+              margin: 0,
+              fontSize: "17px",
+              lineHeight: 1.5,
+            }}
+          >
+            Checking your link...
+          </p>
         )}
 
         {status === "reset" && (
           <>
-            <h2>Reset your password</h2>
+            <h2
+              style={{
+                margin: "0 0 12px",
+                fontSize: "34px",
+                lineHeight: 1.05,
+              }}
+            >
+              Reset your password
+            </h2>
 
-            <p>
+            <p
+              style={{
+                margin: 0,
+                fontSize: "16px",
+                lineHeight: 1.5,
+                color: "#555555",
+              }}
+            >
               Enter a new password for{" "}
               <strong>{email}</strong>.
             </p>
@@ -176,7 +226,8 @@ export default function AuthActionClient() {
                   borderRadius: "14px",
                   fontSize: "16px",
                   boxSizing: "border-box",
-                  marginTop: "12px",
+                  marginTop: "22px",
+                  outline: "none",
                 }}
               />
 
@@ -185,6 +236,7 @@ export default function AuthActionClient() {
                   style={{
                     color: "#b42318",
                     fontSize: "14px",
+                    marginBottom: 0,
                   }}
                 >
                   {message}
@@ -201,7 +253,7 @@ export default function AuthActionClient() {
                   borderRadius: "14px",
                   background: "#ff6d1a",
                   color: "#ffffff",
-                  fontSize: "15px",
+                  fontSize: "16px",
                   fontWeight: 700,
                   cursor: "pointer",
                 }}
@@ -214,15 +266,73 @@ export default function AuthActionClient() {
 
         {status === "success" && (
           <>
-            <h2>Done</h2>
-            <p>{message}</p>
+            <h2
+              style={{
+                margin: "0 0 14px",
+                fontSize: "48px",
+                lineHeight: 1,
+                fontWeight: 800,
+                letterSpacing: "-1.5px",
+              }}
+            >
+              Done
+            </h2>
+
+            <p
+              style={{
+                margin: 0,
+                fontSize: "18px",
+                lineHeight: 1.5,
+                color: "#222222",
+              }}
+            >
+              {message}
+            </p>
+
+            <button
+              type="button"
+              onClick={handleBackToApp}
+              style={{
+                width: "100%",
+                height: "54px",
+                marginTop: "28px",
+                border: 0,
+                borderRadius: "14px",
+                background: "#ff6d1a",
+                color: "#ffffff",
+                fontSize: "17px",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              Open LiveNow
+            </button>
           </>
         )}
 
         {status === "error" && (
           <>
-            <h2>Something went wrong</h2>
-            <p>{message}</p>
+            <h2
+              style={{
+                margin: "0 0 14px",
+                fontSize: "38px",
+                lineHeight: 1.05,
+                fontWeight: 800,
+              }}
+            >
+              Something went wrong
+            </h2>
+
+            <p
+              style={{
+                margin: 0,
+                fontSize: "17px",
+                lineHeight: 1.5,
+                color: "#333333",
+              }}
+            >
+              {message}
+            </p>
           </>
         )}
       </div>
