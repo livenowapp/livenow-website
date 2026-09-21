@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "./launch.module.css";
-import WaitlistForm from "@/components/WaitlistForm";
+
+const APP_STORE_URL =
+  "https://apps.apple.com/si/app/livenow-stop-overthinking/id6803602875";
 
 export default function Home() {
   return (
@@ -25,9 +27,14 @@ export default function Home() {
             <span>LiveNow</span>
           </Link>
 
-          <div className={styles.headerBadge}>
-            Coming soon for iOS
-          </div>
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.headerBadge}
+          >
+            Download
+          </a>
         </div>
       </header>
 
@@ -56,11 +63,18 @@ export default function Home() {
           </h1>
 
           <p className={styles.description}>
-            Understand the thought. Reframe it. 
+            Understand the thought. Reframe it.
             Take one small step back to the present.
           </p>
 
-          <WaitlistForm />
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.downloadButton}
+          >
+            Download on the App Store
+          </a>
 
           <p className={styles.tagline}>
             A guided reset for the moments when your mind
@@ -83,7 +97,6 @@ export default function Home() {
             <Link href="/help">
               Help
             </Link>
-
           </nav>
 
           <p className={styles.copyright}>
